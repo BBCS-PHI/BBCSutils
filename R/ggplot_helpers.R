@@ -74,7 +74,11 @@ icb_theme_cols <- function(...,
                                 "ics_orange",
                                 "ics_green",
                                 "ics_purple",
-                                "ics_navy"
+                                "ics_navy",
+                                "contrast_green_orange",
+                                "contrast_orange_blue",
+                                "contrast_blue_purple",
+                                "contrast_purple_green"
                             )) {
     # take the ... argument's and convert to a unique vector
     dots <- unique(c(...))
@@ -101,24 +105,100 @@ icb_theme_cols <- function(...,
     # return the colours that are part of this palette
     # Taken from ICS branding guidelines in 'Colour Palette'
     colours <- switch(palette,
-                      "cluster" = c("cluster_green1",
-                                     "cluster_green2",
-                                     "cluster_turquoise",
-                                     "cluster_lightblue",
-                                     "cluster_blue",
-                                     "cluster_darkblue",
-                                     "cluster_purple",
-                                     "cluster_purplepink",
-                                     "cluster_pinkorgange",
-                                     "cluster_orange"),
-                      "bsol" = c("green", "light_blue", "orange", "deep_navy", "purple"),
-                      "alternative" = c("light_blue", "black_navy", "white"),
+                      "cluster" = c(
+                        "cluster_green1",
+                        "cluster_green2",
+                        "cluster_turquoise",
+                        "cluster_lightblue",
+                        "cluster_blue",
+                        "cluster_darkblue",
+                        "cluster_purple",
+                        "cluster_purplepink",
+                        "cluster_pinkorgange",
+                        "cluster_orange"
+                      ),
+                      "bsol" = c(
+                        "green",
+                        "light_blue",
+                        "orange",
+                        "deep_navy",
+                        "purple"
+                      ),
+                      "alternative" = c(
+                        "light_blue",
+                        "black_navy",
+                        "white"
+                      ),
 
-                      "ics_blue" = c("light_blue", "white", "green"),
-                      "ics_orange" = c("orange", "white", "deep_navy"),
-                      "ics_green" = c("green", "purple", "deep_navy"),
-                      "ics_purple" = c("purple", "blue", "deep_navy"),
-                      "ics_navy" = c("deep_navy", "white", "orange")
+                      "ics_blue" = c(
+                        "light_blue",
+                        "white",
+                        "green"
+                      ),
+                      "ics_orange" = c(
+                        "orange",
+                        "white",
+                        "deep_navy"
+                      ),
+                      "ics_green" = c(
+                        "green",
+                        "purple",
+                        "deep_navy"
+                      ),
+                      "ics_purple" = c(
+                        "purple",
+                        "blue",
+                        "deep_navy"
+                      ),
+                      "ics_navy" = c(
+                        "deep_navy",
+                        "white",
+                        "orange"
+                      ),
+                      
+                      "contrast_green_orange" = c(
+                        "contrast_green_orange1",
+                        "contrast_green_orange2",
+                        "contrast_green_orange3",
+                        "contrast_green_orange4",
+                        "contrast_green_orange5",
+                        "contrast_green_orange6",
+                        "contrast_green_orange7",
+                        "contrast_green_orange8"
+                      ),
+                      
+                      "contrast_orange_blue" = c(
+                        "contrast_orange_blue1",
+                        "contrast_orange_blue2",
+                        "contrast_orange_blue3",
+                        "contrast_orange_blue4",
+                        "contrast_orange_blue5",
+                        "contrast_orange_blue6",
+                        "contrast_orange_blue7",
+                        "contrast_orange_blue8"
+                      ),
+                      
+                      "contrast_blue_purple" = c(
+                        "contrast_blue_purple1",
+                        "contrast_blue_purple2",
+                        "contrast_blue_purple3",
+                        "contrast_blue_purple4",
+                        "contrast_blue_purple5",
+                        "contrast_blue_purple6",
+                        "contrast_blue_purple7",
+                        "contrast_blue_purple8"
+                      ),
+                      
+                      "contrast_purple_green" = c(
+                        "contrast_purple_green1",
+                        "contrast_purple_green2",
+                        "contrast_purple_green3",
+                        "contrast_purple_green4",
+                        "contrast_purple_green5",
+                        "contrast_purple_green6",
+                        "contrast_purple_green7",
+                        "contrast_purple_green8"
+                      )
     )
 
     # return the colours from the selected palette
@@ -155,7 +235,11 @@ scale_colour_icb <- function(palette = c(
     "ics_orange",
     "ics_green",
     "ics_purple",
-    "ics_navy"
+    "ics_navy",
+    "contrast_green_orange",
+    "contrast_orange_blue",
+    "contrast_blue_purple",
+    "contrast_purple_green"
 ),
 discrete = TRUE,
 reverse = FALSE, ...) {
@@ -184,7 +268,11 @@ scale_fill_icb <- function(palette = c(
     "ics_orange",
     "ics_green",
     "ics_purple",
-    "ics_navy"
+    "ics_navy",
+    "contrast_green_orange",
+    "contrast_orange_blue",
+    "contrast_blue_purple",
+    "contrast_purple_green"
 ),
 discrete = TRUE,
 reverse = FALSE, ...) {
@@ -198,6 +286,3 @@ reverse = FALSE, ...) {
         scale_fill_gradientn(colours = pal(256), ...)
     }
 }
-
-
-
