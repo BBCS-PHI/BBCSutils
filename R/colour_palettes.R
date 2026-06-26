@@ -37,43 +37,43 @@ icb_theme_colours <- c(
     # High-contrast palettes based on cluster colours
     
     # Cluster green-orange contrast
-    contrast_green_orange1 = cluster_green2,
+    contrast_green_orange1 = "#1FA766",
     contrast_green_orange2 = "#062214",
     contrast_green_orange3 = "#96ECC2",
-    contrast_green_orange4 = cluster_orange,
+    contrast_green_orange4 = "#F16522",
     contrast_green_orange5 = "#341303",
     contrast_green_orange6 = "#F9C1A7",
     contrast_green_orange7 = "#FE9666",
     contrast_green_orange8 = "#A66999",
     
     # Cluster orange-blue contrast
-    contrast_orange_blue1 = cluster_orange,
+    contrast_orange_blue1 = "#F16522",
     contrast_orange_blue2 = "#341303",
     contrast_orange_blue3 = "#F9C1A7",
-    contrast_orange_blue4 = cluster_darkblue,
+    contrast_orange_blue4 = "#4E54B0",
     contrast_orange_blue5 = "#1F2247",
     contrast_orange_blue6 = "#B8BBE0",
     contrast_orange_blue7 = "#9B380A",
     contrast_orange_blue8 = "#150801",
     
     # Cluster blue-purple contrast
-    contrast_blue_purple1 = cluster_blue,
+    contrast_blue_purple1 = "#2E6FCA",
     contrast_blue_purple2 = "#091629",
     contrast_blue_purple3 = "#80A9E2",
-    contrast_blue_purple4 = cluster_purplepink,
+    contrast_blue_purple4 = "#8C4475",
     contrast_blue_purple5 = "#381B2F",
     contrast_blue_purple6 = "#D8AECB",
-    contrast_blue_purple7 = cluster_purple,
+    contrast_blue_purple7 = "#6C4993",
     contrast_blue_purple8 = "#C4B1D9",
     
     # Cluster purple-green contrast
-    contrast_purple_green1 = cluster_purple,
+    contrast_purple_green1 = "#6C4993",
     contrast_purple_green2 = "#150E1D",
     contrast_purple_green3 = "#C4B1D9",
-    contrast_purple_green4 = cluster_green2,
+    contrast_purple_green4 = "#1FA766",
     contrast_purple_green5 = "#0A4340",
     contrast_purple_green6 = "#92EEE9",
-    contrast_purple_green7 = cluster_purplepink,
+    contrast_purple_green7 = "#8C4475",
     contrast_purple_green8 = "#D8AECB"
 )
 
