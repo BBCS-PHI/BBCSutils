@@ -509,7 +509,7 @@ ISR_deprivation_table <- function(data) {
 #'   \item{denominator}{Denominator of a given indicator}
 #' }
 #'
-#' @source Constructed from code <https://github.com/Birmingham-and-Solihull-ICS/BSOLutils/blob/main/data-raw/build_example_data.R>
+#' @source Constructed from code <https://github.com/BBCS-PHI/BSOLutils/blob/main/data-raw/build_example_data.R>
 #'
 #' @usage data(ISR_example)
 #'
