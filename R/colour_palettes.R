@@ -106,7 +106,11 @@ icb_theme_pal <- function(palette = c(
     "ics_orange",
     "ics_green",
     "ics_purple",
-    "ics_navy"
+    "ics_navy",
+    "contrast_green_orange",
+    "contrast_orange_blue",
+    "contrast_blue_purple",
+    "contrast_purple_green"
 ),
 reverse = FALSE,
 ...) {
