@@ -1,6 +1,6 @@
-Package: BSOLutils
+Package: BBCSutils
 Title: Utilities and general helper R package with various functions
-Version: 0.0.3
+Version: 0.0.4
 Authors@R: c(
   person(
     "Chris", "Mainey",
@@ -17,7 +17,13 @@ Authors@R: c(
     "Archie", "Atack",
     email = "a.atack@nhs.net",
     role = c("aut", "ctb")
-  ))
+  )),
+  person(
+    "Nathan", "Thomas",
+    email = "nathan.thomas6@nhs.net",
+    role = c("aut", "ctb"),
+    comment = c(ORCID = "0009-0006-3734-1943")
+  )
 Maintainer: Chris Mainey <c.mainey1@nhs.net>
 Description: This package contains numerous helper functions.  There include functions for confidence intervals, predicting SQL data types, ggplot themes and palettes, ploty helpers, binomial thinning, standardisation methods and dispersion metrics.
 License: MIT + file LICENSE
@@ -51,5 +57,5 @@ Config/testthat/edition: 3
 Remotes: 
     r-lib/fs,
     plotly/plotly.R
-URL: https://birmingham-and-solihull-ics.github.io/BSOLutils/
-BugReports: https://github.com/birmingham-and-solihull-ics/BSOLutils/issues, 
+URL: https://birmingham-and-solihull-ics.github.io/BBCSutils/
+BugReports: https://github.com/birmingham-and-solihull-ics/BBCSutils/issues, 
