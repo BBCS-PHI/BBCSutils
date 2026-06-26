@@ -17,13 +17,14 @@ Authors@R: c(
     "Archie", "Atack",
     email = "a.atack@nhs.net",
     role = c("aut", "ctb")
-  )),
+  ),
   person(
     "Nathan", "Thomas",
     email = "nathan.thomas6@nhs.net",
     role = c("aut", "ctb"),
     comment = c(ORCID = "0009-0006-3734-1943")
   )
+)
 Maintainer: Chris Mainey <c.mainey1@nhs.net>
 Description: This package contains numerous helper functions.  There include functions for confidence intervals, predicting SQL data types, ggplot themes and palettes, ploty helpers, binomial thinning, standardisation methods and dispersion metrics.
 License: MIT + file LICENSE
