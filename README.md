@@ -5,17 +5,16 @@
 
 [![Lifecycle:
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
-[![R-CMD-check](https://github.com/Birmingham-and-Solihull-ICS/BSOLutils/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/Birmingham-and-Solihull-ICS/BSOLutils/actions/workflows/R-CMD-check.yaml)
-[![Codecov test
-coverage](https://codecov.io/gh/Birmingham-and-Solihull-ICS/BSOLutils/branch/main/graph/badge.svg)](https://app.codecov.io/gh/Birmingham-and-Solihull-ICS/BSOLutils?branch=main)
+<!-- [![R-CMD-check](https://github.com/BBCS-PHI/BBCSutils/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/BBCS-PHI/BBCSutils/actions/workflows/R-CMD-check.yaml) -->
+<!-- [![Codecov test coverage](https://codecov.io/gh/Birmingham-and-Solihull-ICS/BSOLutils/branch/main/graph/badge.svg)](https://app.codecov.io/gh/Birmingham-and-Solihull-ICS/BSOLutils?branch=main) -->
 
 <!-- badges: end -->
 
-# BSOLutils
+# BBCSutils
 
 This repository contains an R package to help with various day-to-day
-tasks in BSOL ICB BI and Data Science teams. It contains various helper
-functions for things like:
+tasks in BBCS ICB Cluster Population Health Improvement - Analytics
+team. It contains various helper functions for things like:
 
 - confidence intervals
 - ICB colour palette functions
@@ -29,7 +28,7 @@ using the following command:
 
 ``` r
 # install.packages("remotes")
-remotes::install_github("https://github.com/Birmingham-and-Solihull-ICS/BSOLutils")
+remotes::install_github("https://github.com/BBCS-PHI/BBCSutils")
 ```
 
 # Examples
@@ -41,7 +40,7 @@ broadly, followed PHE / UKHSA guidance on methods, with an exception for
 using Ulm’s methods for standardised rates.
 
 ``` r
-library(BSOLutils)
+library(BBCSutils)
 library(NHSRdatasets)
 library(dplyr)
 data("LOS_model")
@@ -106,7 +105,7 @@ LOS_summary <-
 ## SQL-helper functions
 
 When loading data into SQL Server using R, we can rely on implicit
-conversation but it is not always right. The function below takes and
+conversation but it is not always right. The function below takes a
 data.frame input (for example the `mtcars` demo data) and suggests
 suitable data types for SQL Server import.
 
@@ -127,8 +126,8 @@ default is set to the new, clustered ICB graphic. There are other
 palettes, based off the old BSOL ICB styling and style guide colours,
 including hue-based single colour palettes.
 
-Plotting the standardisation example from above, we;ll aply both the ICB
-colour scale and the ICB theme.
+Plotting the standardisation example from above, we’ll apply both the
+ICB colour scale and the ICB theme.
 
 ``` r
 library(ggplot2)
@@ -209,12 +208,12 @@ April 2025.
 
 ``` r
 f_year(Sys.Date())
-#> [1] "2025/26"
+#> [1] "2026/27"
 
 f_year_start(Sys.Date())
-#> [1] "2025-04-01"
+#> [1] "2026-04-01"
 f_year_end(Sys.Date())
-#> [1] "2026-03-31"
+#> [1] "2027-03-31"
 ```
 
 ## Dispersion

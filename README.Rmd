@@ -15,7 +15,9 @@ knitr::opts_chunk$set(
 
 <!-- badges: start -->
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
-[![R-CMD-check](https://github.com/BBCS-PHI/BBCSutils/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/BBCS-PHI/BBCSutils/actions/workflows/R-CMD-check.yaml)
+<!-- [![R-CMD-check](https://github.com/BBCS-PHI/BBCSutils/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/BBCS-PHI/BBCSutils/actions/workflows/R-CMD-check.yaml) -->
+<!-- [![Codecov test coverage](https://codecov.io/gh/Birmingham-and-Solihull-ICS/BSOLutils/branch/main/graph/badge.svg)](https://app.codecov.io/gh/Birmingham-and-Solihull-ICS/BSOLutils?branch=main) -->
+  
  <!-- badges: end -->
 
 
@@ -35,7 +37,7 @@ This package is not released on CRAN, but can be installed from GitHub using the
 
 ```{r, eval=FALSE}
 # install.packages("remotes")
-remotes::install_github("https://github.com/Birmingham-and-Solihull-ICS/BSOLutils")
+remotes::install_github("https://github.com/BBCS-PHI/BBCSutils")
 ```
 
 # Examples
