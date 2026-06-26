@@ -1,0 +1,15 @@
+^BSOLutils\.Rproj$
+^\.Rproj\.user$
+^dev$
+^README\.Rmd$
+^LICENSE\.md$
+^\.github$
+^codecov\.yml$
+^MIT-LICENSE$
+^OPEN_GOV_LICENSE$
+^data-raw$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
+^\.positai$
+^\.claude$
