@@ -279,9 +279,11 @@ reverse = FALSE, ...) {
     palette <- match.arg(palette)
 
     pal <- icb_theme_pal(palette = palette, reverse = reverse)
+    
+    colour_vec = as.vector(icb_theme_cols(palette = palette))
 
     if (discrete) {
-        discrete_scale("fill", paste0("icb_theme_", palette), palette = pal, ...)
+        discrete_scale("fill", paste0("icb_theme_", palette), palette = colour_vec, ...)
     } else {
         scale_fill_gradientn(colours = pal(256), ...)
     }
