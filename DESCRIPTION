@@ -1,6 +1,6 @@
 Package: BBCSutils
 Title: Utilities and general helper R package with various functions
-Version: 0.0.4
+Version: 0.0.5
 Authors@R: c(
   person(
     "Chris", "Mainey",
