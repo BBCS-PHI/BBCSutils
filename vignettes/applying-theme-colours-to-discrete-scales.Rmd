@@ -46,51 +46,51 @@ test_df <- data.frame(
 ```
 
 
-Here, the number of categories in the variable `z` is five. If we pick a colour palette with at least five colours in it using `scale_fill_manual` and `icb_theme_pal_vec`, then our discrete scale will use colours from this palette:
+Here, the number of categories in the variable `z` is five. If we pick a colour palette with at least five colours in it using `ggplot2::scale_fill_manual` and `BBCSutils::icb_theme_pal_vec`, then our discrete scale will use colours from this palette:
 
 
 ```{r}
 # Plot discrete data using scale_fill_manual to get exact palette colours
 test_df |>
-  ggplot(
+  ggplot2::ggplot(
     aes(
       x = z,
       y = y,
       fill = z
     )
   ) +
-  stat_summary(
+  ggplot2::stat_summary(
     fun = "mean",
     geom = "bar"
   ) +
-  scale_fill_manual(
-    values = icb_theme_pal_vec("contrast_purple_green")
+  ggplot2::scale_fill_manual(
+    values = BBCSUtils::icb_theme_pal_vec("contrast_purple_green")
   ) +
-  theme_icb()
+  BBCSutils::theme_icb()
 ```
 
 
-If we choose to convert the palette to a gradient first using `scale_fill_icb`, then the discrete scale will use colours selected from this gradient at five regular intervals, rather than exact palette colours:
+If we choose to convert the palette to a gradient first using `BBCSutils::scale_fill_icb`, then the discrete scale will use colours selected from this gradient at five regular intervals, rather than exact palette colours:
 
 
 ```{r}
 # Plot discrete data using scale_fill_icb
 test_df |>
-  ggplot(
+  ggplot2::ggplot(
     aes(
       x = z,
       y = y,
       fill = z
     )
   ) +
-  stat_summary(
+  ggplot2::stat_summary(
     fun = "mean",
     geom = "bar"
   ) +
-  scale_fill_icb(
+  BBCSutils::scale_fill_icb(
     palette = "contrast_purple_green"
   ) +
-  theme_icb()
+  BBCSutils::theme_icb()
 ```
 
 
@@ -120,21 +120,21 @@ In this dataset, the number of categories in `z` is now 10. If we choose a palet
 ```{r}
 # Plotting discrete data using scale_fill_manual generates an error
 test_df2 |>
-  ggplot(
+  ggplot2::ggplot(
     aes(
       x = z,
       y = y,
       fill = z
     )
   ) +
-  stat_summary(
+  ggplot2::stat_summary(
     fun = "mean",
     geom = "bar"
   ) +
-  scale_fill_manual(
-    values = icb_theme_pal_vec("contrast_green_orange")
+  ggplot2::scale_fill_manual(
+    values = BBCSutils::icb_theme_pal_vec("contrast_green_orange")
   ) +
-  theme_icb()
+  BBCSutils::theme_icb()
 ```
 
 
@@ -144,21 +144,21 @@ However, we can still get a working chart using `scale_fill_icb`, albeit using c
 ```{r}
 # Plotting discrete data using scale_fill_icb returns a valid result by selecting colours from a gradient
 test_df2 |>
-  ggplot(
+  ggplot2::ggplot(
     aes(
       x = z,
       y = y,
       fill = z
     )
   ) +
-  stat_summary(
+  ggplot2::stat_summary(
     fun = "mean",
     geom = "bar"
   ) +
-  scale_fill_icb(
+  BBCSutils::scale_fill_icb(
     palette = "contrast_purple_green"
   ) +
-  theme_icb()
+  BBCSutils::theme_icb()
 ```
 
 
@@ -167,5 +167,5 @@ test_df2 |>
 
 We can see from these examples that the best approach to use depends on how many colours are in your chosen palette and how many breaks are in your scale, with the latter usually determined by the number of levels in the discrete variable being used for the fill:
 
-- If the number of colours in the palette is greater than the number of breaks in the scale, then use `scale_fill_manual` and `icb_theme_pal_vec`
-- If the number of colours in the palette is less than the number of breaks in the scale, then use `scale_fill_icb`
+- If the number of colours in the palette is greater than the number of breaks in the scale, then use `ggplot2::scale_fill_manual` and `BBCSutils::icb_theme_pal_vec`
+- If the number of colours in the palette is less than the number of breaks in the scale, then use `BBCSutils::scale_fill_icb`
