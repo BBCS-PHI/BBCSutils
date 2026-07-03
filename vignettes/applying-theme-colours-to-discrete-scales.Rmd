@@ -1,0 +1,171 @@
+---
+title: "applying-theme-colours-to-discrete-scales"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{applying-theme-colours-to-discrete-scales}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(BBCSutils)
+```
+
+The colours in the various ICB theme palettes have been selected to match those used in other PHI Analytics outputs. Additionally, the colours in the 'contrast' palettes were chosen to try to make it as easy as possible to distinguish between them, including for people with different types of colourblindness. For these reasons, we typically want to use the exact colours specified in the palette when we are working with discrete colour scales.
+
+
+However, each palette contains a maximum of 8 colours, and your discrete scale may have more levels than this. In such cases, we can turn the palette into a continuous gradient from the first colour in the palette to the last, passing through all the intermediate colours. New colours are then selected from this gradient at intervals matching the number of breaks in the discrete scale. The selected colours will differ from the palette colours unless the number of breaks in the scale matches the number of colours in the palette.
+
+
+The following examples demonstrate the different results obtained by these two approaches.
+
+
+## Discrete scale, number of breaks is less than number of palette colours
+
+First we create some data:
+
+```{r}
+# Generate some data
+test_df <- data.frame(
+  x = rnorm(40, mean = 5, sd = 2),
+  y = runif(40, min = 0, max = 5),
+  z = rep(
+    c(
+      "A", "B", "C", "D", "E"
+    ),
+    8
+  )
+)
+```
+
+
+Here, the number of categories in the variable `z` is five. If we pick a colour palette with at least five colours in it using `scale_fill_manual` and `icb_theme_pal_vec`, then our discrete scale will use colours from this palette:
+
+
+```{r}
+# Plot discrete data using scale_fill_manual to get exact palette colours
+test_df |>
+  ggplot(
+    aes(
+      x = z,
+      y = y,
+      fill = z
+    )
+  ) +
+  stat_summary(
+    fun = "mean",
+    geom = "bar"
+  ) +
+  scale_fill_manual(
+    values = icb_theme_pal_vec("contrast_purple_green")
+  ) +
+  theme_icb()
+```
+
+
+If we choose to convert the palette to a gradient first using `scale_fill_icb`, then the discrete scale will use colours selected from this gradient at five regular intervals, rather than exact palette colours:
+
+
+```{r}
+# Plot discrete data using scale_fill_icb
+test_df |>
+  ggplot(
+    aes(
+      x = z,
+      y = y,
+      fill = z
+    )
+  ) +
+  stat_summary(
+    fun = "mean",
+    geom = "bar"
+  ) +
+  scale_fill_icb(
+    palette = "contrast_purple_green"
+  ) +
+  theme_icb()
+```
+
+
+## Discrete scale, number of breaks exceeds the number of palette colours
+
+
+In this second example, we will generate some data that has more categories than there are colours in the palette, and see what happens when we try to apply a discrete scale.
+
+
+```{r}
+# Generate data with more categories than colours in palette
+test_df2 <- data.frame(
+  x = rnorm(40, mean = 5, sd = 2),
+  y = runif(40, min = 0, max = 5),
+  z = rep(
+    c(
+      "A", "B", "C", "D", "E", "F", "G", "H", "I", "J"
+    ),
+    4
+  )
+)
+```
+
+
+In this dataset, the number of categories in `z` is now 10. If we choose a palette with fewer than 10 colours in it, and try to apply it to a discrete scale using `scale_fill_manual`, we will get an error:
+
+```{r}
+# Plotting discrete data using scale_fill_manual generates an error
+test_df2 |>
+  ggplot(
+    aes(
+      x = z,
+      y = y,
+      fill = z
+    )
+  ) +
+  stat_summary(
+    fun = "mean",
+    geom = "bar"
+  ) +
+  scale_fill_manual(
+    values = icb_theme_pal_vec("contrast_green_orange")
+  ) +
+  theme_icb()
+```
+
+
+However, we can still get a working chart using `scale_fill_icb`, albeit using colours that aren't specified in the palette:
+
+
+```{r}
+# Plotting discrete data using scale_fill_icb returns a valid result by selecting colours from a gradient
+test_df2 |>
+  ggplot(
+    aes(
+      x = z,
+      y = y,
+      fill = z
+    )
+  ) +
+  stat_summary(
+    fun = "mean",
+    geom = "bar"
+  ) +
+  scale_fill_icb(
+    palette = "contrast_purple_green"
+  ) +
+  theme_icb()
+```
+
+
+## Which approach to use?
+
+
+We can see from these examples that the best approach to use depends on how many colours are in your chosen palette and how many breaks are in your scale, with the latter usually determined by the number of levels in the discrete variable being used for the fill:
+
+- If the number of colours in the palette is greater than the number of breaks in the scale, then use `scale_fill_manual` and `icb_theme_pal_vec`
+- If the number of colours in the palette is less than the number of breaks in the scale, then use `scale_fill_icb`
