@@ -18,7 +18,7 @@ A data frame with 192 rows and 5 columns:
 }
 }
 \source{
-Constructed from code \url{https://github.com/Birmingham-and-Solihull-ICS/BSOLutils/blob/main/data-raw/build_example_data.R}
+Constructed from code \url{https://github.com/BBCS-PHI/BSOLutils/blob/main/data-raw/build_example_data.R}
 }
 \usage{
 data(ISR_example)

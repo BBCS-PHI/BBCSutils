@@ -29,7 +29,6 @@ Description: This package contains numerous helper functions.  There include fun
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.3
 Imports: 
     dplyr,
     fs,
@@ -59,3 +58,4 @@ Remotes:
     plotly/plotly.R
 URL: https://birmingham-and-solihull-ics.github.io/BBCSutils/
 BugReports: https://github.com/birmingham-and-solihull-ics/BBCSutils/issues, 
+Config/roxygen2/version: 8.0.0

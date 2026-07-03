@@ -6,7 +6,8 @@
 \usage{
 icb_theme_pal(
   palette = c("cluster", "bsol", "alternative", "ics_blue", "ics_orange", "ics_green",
-    "ics_purple", "ics_navy"),
+    "ics_purple", "ics_navy", "contrast_green_orange", "contrast_orange_blue",
+    "contrast_blue_purple", "contrast_purple_green"),
   reverse = FALSE,
   ...
 )

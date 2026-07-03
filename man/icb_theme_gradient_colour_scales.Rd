@@ -9,7 +9,8 @@
 \usage{
 scale_colour_icb(
   palette = c("cluster", "bsol", "alternative", "ics_blue", "ics_orange", "ics_green",
-    "ics_purple", "ics_navy"),
+    "ics_purple", "ics_navy", "contrast_green_orange", "contrast_orange_blue",
+    "contrast_blue_purple", "contrast_purple_green"),
   discrete = TRUE,
   reverse = FALSE,
   ...
@@ -17,7 +18,8 @@ scale_colour_icb(
 
 scale_color_icb(
   palette = c("cluster", "bsol", "alternative", "ics_blue", "ics_orange", "ics_green",
-    "ics_purple", "ics_navy"),
+    "ics_purple", "ics_navy", "contrast_green_orange", "contrast_orange_blue",
+    "contrast_blue_purple", "contrast_purple_green"),
   discrete = TRUE,
   reverse = FALSE,
   ...
@@ -25,7 +27,8 @@ scale_color_icb(
 
 scale_fill_icb(
   palette = c("cluster", "bsol", "alternative", "ics_blue", "ics_orange", "ics_green",
-    "ics_purple", "ics_navy"),
+    "ics_purple", "ics_navy", "contrast_green_orange", "contrast_orange_blue",
+    "contrast_blue_purple", "contrast_purple_green"),
   discrete = TRUE,
   reverse = FALSE,
   ...
