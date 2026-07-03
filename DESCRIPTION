@@ -50,6 +50,8 @@ Depends:
     R (>= 4.1.0)
 LazyData: true
 Suggests: 
+    knitr,
+    rmarkdown,
     testthat (>= 3.0.0),
     tibble
 Config/testthat/edition: 3
@@ -59,3 +61,4 @@ Remotes:
 URL: https://birmingham-and-solihull-ics.github.io/BBCSutils/
 BugReports: https://github.com/birmingham-and-solihull-ics/BBCSutils/issues, 
 Config/roxygen2/version: 8.0.0
+VignetteBuilder: knitr
