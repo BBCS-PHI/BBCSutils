@@ -117,7 +117,7 @@ test_df2 <- data.frame(
 
 In this dataset, the number of categories in `z` is now 10. If we choose a palette with fewer than 10 colours in it, and try to apply it to a discrete scale using `scale_fill_manual`, we will get an error:
 
-```{r}
+```{r error = TRUE}
 # Plotting discrete data using scale_fill_manual generates an error
 test_df2 |>
   ggplot2::ggplot(
