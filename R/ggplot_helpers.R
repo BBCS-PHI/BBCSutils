@@ -279,12 +279,37 @@ reverse = FALSE, ...) {
     palette <- match.arg(palette)
 
     pal <- icb_theme_pal(palette = palette, reverse = reverse)
-    
-    colour_vec = as.vector(icb_theme_cols(palette = palette))
 
     if (discrete) {
-        discrete_scale("fill", paste0("icb_theme_", palette), palette = colour_vec, ...)
+        discrete_scale(
+          "fill",
+          # scale_name deprecated as of ggplot2 3.5.0
+          #paste0("icb_theme_", palette),
+          palette = pal,
+          ...
+        )
     } else {
         scale_fill_gradientn(colours = pal(256), ...)
     }
+}
+
+
+#' @export
+#' @rdname icb_theme_pal_vec
+#' @title Returns ICB theme palette as a vector
+#' 
+#' @description
+#' Returns an ICB theme palette as a vector of colours for use with 
+#' scale_fill_manual() and scale_colour_manual(). This allows the exact colours 
+#' to be used for a discrete scale rather than colours selected from a gradient 
+#' defined by the palette.
+#' 
+#' @param palette The name of the palette to be used
+#' 
+#' @return A vector of colours from the palette
+#' 
+#' @example
+#' icb_theme_pal_vec("cluster)
+icb_theme_pal_vec <- function(palette) {
+  as.vector(icb_theme_cols(palette = palette))
 }
