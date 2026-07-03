@@ -53,7 +53,7 @@ Here, the number of categories in the variable `z` is five. If we pick a colour 
 # Plot discrete data using scale_fill_manual to get exact palette colours
 test_df |>
   ggplot2::ggplot(
-    aes(
+    ggplot2::aes(
       x = z,
       y = y,
       fill = z
@@ -77,7 +77,7 @@ If we choose to convert the palette to a gradient first using `BBCSutils::scale_
 # Plot discrete data using scale_fill_icb
 test_df |>
   ggplot2::ggplot(
-    aes(
+    ggplot2::aes(
       x = z,
       y = y,
       fill = z
@@ -121,7 +121,7 @@ In this dataset, the number of categories in `z` is now 10. If we choose a palet
 # Plotting discrete data using scale_fill_manual generates an error
 test_df2 |>
   ggplot2::ggplot(
-    aes(
+    ggplot2::aes(
       x = z,
       y = y,
       fill = z
@@ -145,7 +145,7 @@ However, we can still get a working chart using `scale_fill_icb`, albeit using c
 # Plotting discrete data using scale_fill_icb returns a valid result by selecting colours from a gradient
 test_df2 |>
   ggplot2::ggplot(
-    aes(
+    ggplot2::aes(
       x = z,
       y = y,
       fill = z
