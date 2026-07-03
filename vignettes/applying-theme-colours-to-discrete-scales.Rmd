@@ -64,7 +64,7 @@ test_df |>
     geom = "bar"
   ) +
   ggplot2::scale_fill_manual(
-    values = BBCSUtils::icb_theme_pal_vec("contrast_purple_green")
+    values = BBCSutils::icb_theme_pal_vec("contrast_purple_green")
   ) +
   BBCSutils::theme_icb()
 ```
